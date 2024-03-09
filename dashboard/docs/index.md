@@ -13,5 +13,5 @@ const languageStats = await getJsonData("https://raw.githubusercontent.com/bradf
 ```
 
 ```js
-view(languageStats)
+view(languageStats) 
 ```
