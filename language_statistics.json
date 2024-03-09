@@ -3,7 +3,7 @@
     "language": "python",
     "stats": [
       {
-        "file": "python/line.py",
+        "file": "python/generate_code_stats.py",
         "lines": 73
       }
     ]
