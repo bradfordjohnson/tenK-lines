@@ -9,7 +9,10 @@ async function getJsonData(url) {
   if (!response.ok) throw new Error(`fetch failed: ${response.status}`);
   return await response.json();
 }
+
 const languageStats = await getJsonData("https://raw.githubusercontent.com/bradfordjohnson/tenK-lines/master/data/language_statistics.json");
+
+const projectStats = await getJsonData("https://raw.githubusercontent.com/bradfordjohnson/tenK-lines/master/data/project_statistics.json");
 ```
 
 ```js
