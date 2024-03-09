@@ -1,4 +1,5 @@
 import os
+import json
 
 class LineProgress:
     """
@@ -16,6 +17,7 @@ class LineProgress:
     list_files(directory=None)
         Counts the number of lines in each file in a directory and returns a dictionary with file paths as keys and line counts as values.
     """
+
     def __init__(self, directory):
         """
         Constructs all the necessary attributes for the LineProgress object.
@@ -26,7 +28,7 @@ class LineProgress:
                 the directory where the files are located
         """
         self.directory = directory
-    
+
     def list_files(self, directory=None):
         """
         Counts the number of lines in each file in a directory and returns a dictionary with file paths as keys and line counts as values.
@@ -62,11 +64,28 @@ class LineProgress:
                 with open(full_path, "r") as file:
                     line_count = sum(1 for _ in file if _.strip())
                 file_line_count_dict[full_path.replace("\\", "/")] = line_count
-        
+
         return file_line_count_dict
 
 
-# line_progress = LineProgress('python')
-# files_dict = line_progress.list_files()
+language_directories = ["python", "r", "javascript"]
+language_statistics = []
 
-# print(files_dict)
+for directory in language_directories:
+    line_progress = LineProgress(directory)
+    files_dict = line_progress.list_files()
+    language_statistics.append(
+        {
+            "language": directory,
+            "stats": [
+                {
+                    "file": file_path,
+                    "lines": lines
+                }
+                
+                for file_path, lines in files_dict.items()
+            ],
+        }
+    )
+
+json.dump(language_statistics, open("./language_statistics.json", "w"), indent=2)

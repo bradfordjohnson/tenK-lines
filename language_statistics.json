@@ -1,0 +1,29 @@
+[
+  {
+    "language": "python",
+    "stats": [
+      {
+        "file": "python/line.py",
+        "lines": 73
+      }
+    ]
+  },
+  {
+    "language": "r",
+    "stats": [
+      {
+        "file": "r/.gitkeep",
+        "lines": 0
+      }
+    ]
+  },
+  {
+    "language": "javascript",
+    "stats": [
+      {
+        "file": "javascript/.gitkeep",
+        "lines": 0
+      }
+    ]
+  }
+]
