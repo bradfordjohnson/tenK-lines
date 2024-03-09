@@ -88,4 +88,4 @@ for directory in language_directories:
         }
     )
 
-json.dump(language_statistics, open("./language_statistics.json", "w"), indent=2)
+json.dump(language_statistics, open("./data/language_statistics.json", "w"), indent=2)
