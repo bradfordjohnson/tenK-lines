@@ -21,6 +21,10 @@
     "language": "javascript",
     "stats": [
       {
+        "file": "javascript/getSerp.js",
+        "lines": 22
+      },
+      {
         "file": "javascript/pandaTeamLeaderAlert.js",
         "lines": 46
       }
