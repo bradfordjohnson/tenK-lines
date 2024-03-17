@@ -1,0 +1,38 @@
+name: Update language statistics
+
+on:
+    push:
+      branches:
+        - main
+      paths:
+        - 'python/**'
+        - 'javascript/**'
+        - 'r/**'
+
+jobs:
+  update_language_statistics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Python script
+        run: |
+          python python/generate_code_stats.py
+          
+      - name: commit files
+        run: | 
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add -A
+          git commit -m "updated language statistics" || echo "no changes to commit"
+          git push origin || echo "no changes to commit"
