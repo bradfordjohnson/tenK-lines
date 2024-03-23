@@ -10,8 +10,9 @@ function binomialCoefficient(n, k) {
 
     return Math.round(result);
 }
+
+// example usage
 const n = 5;
 const k = 3;
 
-// example usage
 console.log(`The binomial coefficient of ${n} choose ${k} is: ${binomialCoefficient(n,k)}`);
