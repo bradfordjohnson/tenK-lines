@@ -3,7 +3,7 @@ name: Update language statistics
 on:
     push:
       branches:
-        - main
+        - master
       paths:
         - 'python/**'
         - 'javascript/**'
