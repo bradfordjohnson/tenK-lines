@@ -12,9 +12,6 @@ function binomialCoefficient(n, k) {
 }
 const n = 5;
 const k = 3;
-console.log(
-    `The binomial coefficient of ${n} choose ${k} is: ${binomialCoefficient(
-        n,
-        k
-    )}`
-);
+
+// example usage
+console.log(`The binomial coefficient of ${n} choose ${k} is: ${binomialCoefficient(n,k)}`);
