@@ -3,6 +3,10 @@
     "language": "python",
     "stats": [
       {
+        "file": "python/manage_images.py",
+        "lines": 10
+      },
+      {
         "file": "python/generate_code_stats.py",
         "lines": 73
       }
